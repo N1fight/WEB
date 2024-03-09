@@ -1,0 +1,102 @@
+<?php
+
+# переменная $x_string со значением x
+$x_string = "x";
+# массив с однима элементом $x_stringArr
+$x_stringArr = array($x_string);
+# Цикл, в котором на каждой итерации к $x_string добравляется x и это значение добавляется в $x_stringArr
+for ($i = 0; $i < 19; $i++)
+{
+    $x_string .= "x";
+    array_push($x_stringArr, $x_string);
+}
+# Цикл, проходящий по всем элементам массива и выписывающий из
+foreach ($x_stringArr as $string)
+{
+    echo $string, " ";
+}
+echo "\n";
+
+
+# Функция arrayFill, которая будет заполнять массив заданными значениями
+# Первым параметром функция принимает значение, которым заполнять массив
+# Вторым - сколько элементов должно быть в массиве
+function arrayFill($value, $num)
+{
+    $arr = array();
+    for ($i = 0; $i < $num; $i++)
+    {
+        array_push($arr, $value);
+    }
+    return $arr;
+}
+# Пример с выводом значений элементов массива
+$fillarray = arrayFill('x', 5);
+foreach ($fillarray as $value)
+{
+    echo $value, " ";
+}
+echo "\n";
+
+# Двухмерный массив, например [[1, 2, 3], [4, 5], [6]]
+$array2d = [[1, 2, 3], [4, 5], [6]];
+# Переменная, которая хранит сумму чисел массива
+$sum = 0;
+# Цикл, складывающий все элементы массива
+foreach ($array2d as $array1d)
+{
+    $sum += array_sum($array1d);
+}
+echo "Сумма массива: ", $sum, "\n";
+
+
+$Two_roundArr = array();
+#строка
+for ($i = 0; $i < 3; $i++)
+{
+    $line = array();
+    # столбец
+    for ($j = 1; $j < 4; $j++)
+    {
+        # значения от 1 до 9 при проходе по циклам добавляются в массив $line
+        array_push($line, 3 * $i + $j);
+    }
+    # элементы внутреннего(внутри цикла) массива $line добавляются в массив $Two_roundArr
+    array_push($Two_roundArr, $line);
+}
+# С помощью двойной итерации выводим двухмерный массив
+for ($i = 0; $i < 3; $i++)
+{
+    for ($j = 0; $j < 3; $j++)
+    {
+        echo $Two_roundArr[$i][$j], " ";
+    }
+    echo "\n";
+}
+
+# массив с элементами 2, 5, 3, 9
+$result_Arr = array(2, 5, 3, 9);
+# переменная $result, равная умножению первого элемента массива на второй, а третьего элемент на четвертый
+# выводим $result
+$result = $result_Arr[0] * $result_Arr[1] + $result_Arr[2] * $result_Arr[3];
+echo "Переменная result : ", $result, "\n";
+
+# массив $user с ключами 'name', 'surname', 'patronymic и их значениями
+$user = ['name'=>'Kostya', 'surname'=>'Tulinov', 'patronymic'=>'Eduardovich'];
+# вывод этих значений по ключам
+echo $user['surname'] . " " . $user['name'] . " " . $user['patronymic'], "\n";
+
+$date = ['year'=>'2024', 'month'=>'03', 'day'=>'10'];
+echo $date['year'] . '-'  . $date['month'] . '-' . $date['day'] . "\n";
+
+# Данный массив
+$arr = ['a', 'b', 'c', 'd', 'e'];
+
+# функция count, считающая кол-во элементов
+echo "Кол-во элементов: ", count($arr), "\n";
+
+#count($arr) - 1 - индекс последнего элемента, а $arr[count($arr) - 1] его значение
+echo "Последний элемент: ", $arr[count($arr) - 1], "\n";
+
+# аналогично предыдущему
+echo "Пред последний элемент: ", $arr[count($arr) - 2], "\n";
