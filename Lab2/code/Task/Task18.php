@@ -5,29 +5,14 @@
 
 function Sum10($num1, $num2)
 {
-    $sum = $num1 + $num2;
-    if ($sum > 10)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+        return $num1 + $num2 > 10;
 }
 
 # функция Equal2num, которая параметрами принимает 2 числа.
 # Если эти числа равны - пусть функция вернет true, а если не равны - false
 function Equal2num($num1, $num2)
 {
-    if ($num1 == $num2)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+        return $num1 == $num2;
 }
 
 # Сокращённая форма
