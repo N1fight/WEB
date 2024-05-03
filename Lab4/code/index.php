@@ -57,15 +57,20 @@
         <th>Description</th>
         </thead>
         <tbody>
-        <?php
-        foreach ($values as $i){
-            echo "<tr>";
-            foreach($i as $j){
-                echo "<td>$j</td>";
+       <?php
+            if ($values) {
+                foreach ($values as $row) {
+                    echo "<tr>";
+                    foreach ($row as $cell) {
+                        echo "<td>$cell</td>";
+                    }
+                    echo "</tr>";
+                }
+            } else {
+                //  Вывод сообщение в случии отсутствия данных
+                echo "<tr><td colspan='3'>No data available</td></tr>";
             }
-            echo "</tr>";
-        }
-        ?>
+            ?>
         </tbody>
     </table>
 </div>
